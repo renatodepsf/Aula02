@@ -10,8 +10,5 @@ public class Main {
         c1.modelo = "Big";
 
         c1.status();
-
-
-
     }
 }
