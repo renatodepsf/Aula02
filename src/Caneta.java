@@ -7,7 +7,10 @@ public class Caneta {
 
     void rabiscar() {
         if (tampada == true) {
-            System.out.println("Caneta tampada.!");
+            System.out.println("Caneta tampada!");
+        }
+        else if (carga == 0) {
+            System.out.println("Caneta com " + carga + "% de carga.");
         }
         else {
             System.out.println("Rabiscando!");
