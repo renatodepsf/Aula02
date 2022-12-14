@@ -1,19 +1,24 @@
 public class Caneta {
-    String modelo;
-    String cor;
-    double ponta;
-    int carga;
-    boolean tampada;
+    private int carga;
+    private boolean tampada = true;
 
-    void rabiscar() {
+    void escrever() {
         if (tampada == true) {
-            System.out.println("Caneta tampada!");
+            System.out.println("ERRO! Destampe a caneta.");
         }
         else if (carga == 0) {
-            System.out.println("Caneta com " + carga + "% de carga.");
+            System.out.println("Caneta com " + carga + "% de carga. Recarregue a caneta!");
         }
         else {
-            System.out.println("Rabiscando!");
+            System.out.println("Escrevendo na página!");
+            this.carga -= 10;
+        }
+    }
+
+    void recarregar() {
+        if (this.carga == 0) {
+            this.carga = 100;
+            System.out.println("Caneta com " + this.carga + "% de carga.");
         }
     }
 
@@ -29,15 +34,16 @@ public class Caneta {
 
     void destampar() {
         if (tampada == true) {
-            System.out.println("Destampando!");
+            System.out.println("Caneta destampada!");
             this.tampada = false;
         } else {
-            System.out.println("A caneta já destampada.");
+            System.out.println("A caneta já está destampada.");
         }
     }
 
     void status() {
         System.out.println();
-        System.out.printf("Cor: %s\nPonta: %.2f\nCarga: %d\nTampada: %b\nModelo: %s", this.cor, this.ponta, this.carga, this.tampada, this.modelo);
+        System.out.printf("Carga: %d\nTampada: %b", this.carga, this.tampada);
+        System.out.println();
     }
 }
